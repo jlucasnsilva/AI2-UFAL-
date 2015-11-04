@@ -1,4 +1,5 @@
 (ns river-crossing.core
+  (:require [clojure.pprint :refer [pprint]])
   (:gen-class))
 
 ;; Transição de estado
@@ -129,7 +130,7 @@
          step   0]
     (when-let [st (first states)]
       (println (str step "º") "passo:")
-      (clojure.pprint/pprint st)
+      (pprint st)
       (recur (next states) (inc step)))))
 
 (defn -main

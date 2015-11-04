@@ -1,4 +1,5 @@
 (ns travelling-salesman.core
+  (:require [clojure.pprint :refer [pprint]])
   (:gen-class))
 
 (declare path?)
@@ -136,4 +137,4 @@
         (println "Caminho gerado:")
         (println "\t" rr)
         (println "Hill climbing...")
-        (clojure.pprint/pprint (hill-climbing roads-map rr)))))
+        (pprint (hill-climbing roads-map rr)))))
