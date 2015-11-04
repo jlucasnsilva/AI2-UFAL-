@@ -29,24 +29,41 @@
 
 (defn input-panel
   []
-  (ss/grid-panel :columns 2
-                 :items ["Risco" (ss/text :multi-line? false
-                                       :editable? false
-                                       :text "<Risco>")
-                         "A" (ss/text :multi-line? false :columns 10)
-                         "B" (ss/text :multi-line? false :columns 10)
-                         "C" (ss/text :multi-line? false :columns 10)
-                         "D" (ss/text :multi-line? false :columns 10)
-                         "E" (ss/text :multi-line? false :columns 10)
-                         "F" (ss/text :multi-line? false :columns 10)
-                         "G" (ss/text :multi-line? false :columns 10)
-                         "H" (ss/text :multi-line? false :columns 10)
-                         "I" (ss/text :multi-line? false :columns 10)
-                         "J" (ss/text :multi-line? false :columns 10)
-                         "L" (ss/text :multi-line? false :columns 10)
-                         "M" (ss/text :multi-line? false :columns 10)
-                         "N" (ss/text :multi-line? false :columns 10)
-                         (ss/button :text "Classificar")]))
+  (let [risk-text (ss/text :multi-line? false :editable? false :text "<Risco>")
+        a-text (ss/text :multi-line? false :editable? false :text "0.0")
+        b-text (ss/text :multi-line? false :editable? false :text "0.0")
+        c-text (ss/text :multi-line? false :editable? false :text "0.0")
+        d-text (ss/text :multi-line? false :editable? false :text "0.0")
+        e-text (ss/text :multi-line? false :editable? false :text "0.0")
+        f-text (ss/text :multi-line? false :editable? false :text "0.0")
+        g-text (ss/text :multi-line? false :editable? false :text "0.0")
+        h-text (ss/text :multi-line? false :editable? false :text "0.0")
+        i-text (ss/text :multi-line? false :editable? false :text "0.0")
+        j-text (ss/text :multi-line? false :editable? false :text "0.0")
+        l-text (ss/text :multi-line? false :editable? false :text "0.0")
+        m-text (ss/text :multi-line? false :editable? false :text "0.0")
+        n-text (ss/text :multi-line? false :editable? false :text "0.0")
+        button-listener (fn [_]
+                          (ss/alert "WORKS!"))]
+    (ss/grid-panel :columns 2
+                   :items ["Risco" (ss/text :multi-line? false
+                                            :editable? false
+                                            :text "<Risco>")
+                           "A" a-text
+                           "B" b-text
+                           "C" c-text
+                           "D" d-text
+                           "E" e-text
+                           "F" f-text
+                           "G" g-text
+                           "H" h-text
+                           "I" i-text
+                           "J" j-text
+                           "L" l-text
+                           "M" m-text
+                           "N" n-text
+                           (ss/button :text "Classificar"
+                                      :listen [:mouse-clicked button-listener])])))
 
 (defn classifier-info-panel
   [classifier]
